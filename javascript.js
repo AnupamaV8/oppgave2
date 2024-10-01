@@ -16,9 +16,15 @@ The function should take in a number as a parameter and return
 received is an even number.
 
 ******************************************************************************/
+function numberType(number) {
+  if (number % 2 === 0) {
+    return "even";
+  } else {
+    return "odd";
+  }
+}
+console.log(numberType(12));
 
-
-  
 /******************************************************************************
 2.
 
@@ -31,7 +37,14 @@ Example: "This is cool" should return "THIS IS COOL!"
 
 ******************************************************************************/
 
-
+function myWord(myString, extraStr) {
+  // let myString = "This is cool";
+  // const extraStr = "!";
+  console.log(myString.toUpperCase() + extraStr);
+  return;
+}
+//const myString = myWord;
+myWord("This is cool", "!");
 /******************************************************************************
 3.
 
@@ -47,15 +60,28 @@ The function should return:
 "Good night (name received)" if the hour received is 0-5
 "Good morning (name received)" if the hour received is 6-11
 "Good day (name received)" if the hour received is 12-17
-"Good evening (name received)" if the hour received is 18-23
+"Good evening (name received)" )if the hour received is 18-23
 "Invalid time" if the hour received is greater than 23
 
 If no hour is received, your function should return an error message.
 
 ******************************************************************************/
-
-
-
+function myGreetings(name, time) {
+  if (time < 0 || time > 23) {
+    return `"Invalid time ${name}"`;
+  } else if (time >= 0 && time <= 5) {
+    return `"Good night ${name}"`;
+  } else if (time >= 6 && time <= 11) {
+    return `"Good morning ${name}"`;
+  } else if (time >= 12 && time <= 17) {
+    return `"Good day ${name}"`;
+  } else if (time >= 18 && time <= 23) {
+    return `"Good evening ${name}"`;
+  } else {
+    return "there is no hours it's an error time";
+  }
+}
+console.log(myGreetings("Jhon", 8));
 /******************************************************************************
 4.
 
@@ -69,8 +95,6 @@ Example 1: ["Red", "Green", "Blue", "Yellow"] should return ["Green", "Blue"]
 Example 2: ["One", "Two", "Three", "Four", "Five", "Six"] should return
 ["Two", "Three", "Four", "Five"]
 ******************************************************************************/
-
-
 
 /******************************************************************************
 5.
@@ -91,8 +115,6 @@ Example3: "   hard        " should return "fun"
 
 ******************************************************************************/
 
-
-
 /******************************************************************************
 6.
 
@@ -105,9 +127,14 @@ Use array methods to do the following:
 
 ******************************************************************************/
 
-const heroes = ["Spider-Man", "Thor", "Hulk", "Doctor Strange", "Iron Man", "Black Widow"]
-
-
+const heroes = [
+  "Spider-Man",
+  "Thor",
+  "Hulk",
+  "Doctor Strange",
+  "Iron Man",
+  "Black Widow",
+];
 
 /******************************************************************************
 7.
@@ -136,8 +163,6 @@ Return "😎Primitive values only😎"
 
 ******************************************************************************/
 
-
-
 /******************************************************************************
 8.
 
@@ -160,6 +185,3 @@ Example2: (["Red", "Green", "Blue"], "Green")) --> ["Red", "Blue"]
 Example3: (["One", "Two", "Three"], "Four") --> ["One", "Two", "Three", "Four"]
 Example4: (["One", "Two", "Three"], "Two") --> ["One", "Three"]
 ******************************************************************************/
-
-
-  
