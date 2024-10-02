@@ -40,11 +40,11 @@ Example: "This is cool" should return "THIS IS COOL!"
 function myWord(myString, extraStr) {
   // let myString = "This is cool";
   // const extraStr = "!";
-  console.log(myString.toUpperCase() + extraStr);
+  console.log(myString.trim().toUpperCase() + extraStr);
   return;
 }
 //const myString = myWord;
-myWord("This is cool", "!");
+myWord("    This is cool     ", "!");
 /******************************************************************************
 3.
 
@@ -94,10 +94,21 @@ Example 1: ["Red", "Green", "Blue", "Yellow"] should return ["Green", "Blue"]
 
 Example 2: ["One", "Two", "Three", "Four", "Five", "Six"] should return
 ["Two", "Three", "Four", "Five"]
-******************************************************************************/
+*************************************************************************/
 
+const myHobbies = new Array(
+  "Chess   ",
+  "Yoga",
+  "Hiking",
+  "boardgames",
+  "badminton",
+  "Watching tv"
+);
+
+console.log(myHobbies);
+console.log(myHobbies.slice(1, 5));
 /******************************************************************************
-5.
+
 
 Make the following function:
 
@@ -114,7 +125,10 @@ Example2: " It's hard to use methods " should return "It's hard to use methods"
 Example3: "   hard        " should return "fun"
 
 ******************************************************************************/
-
+const modifiedData = "  It's hard to use methods   ";
+//console.log(modifiedData.length);
+console.log(modifiedData.replace("hard", "fun"));
+console.log(modifiedData.trim());
 /******************************************************************************
 6.
 
@@ -135,6 +149,15 @@ const heroes = [
   "Iron Man",
   "Black Widow",
 ];
+heroes.shift();
+
+console.log(heroes.join("💪"));
+
+heroes.splice(0, 2, "Captain America");
+console.log(heroes);
+heroes.splice(1, 1, "SkrullS");
+console.log(heroes);
+//
 
 /******************************************************************************
 7.
@@ -162,6 +185,26 @@ If the parameter received is any other datatype:
 Return "😎Primitive values only😎"
 
 ******************************************************************************/
+function myUserData(input) {
+  if (typeof input === "string") {
+    return "😎" + input + "😎";
+  } else if (typeof input === "boolean") {
+    if (input === true) {
+      return "😎Yeah😎";
+    } else input === false;
+    {
+      return "😎Chill😎";
+    }
+  } else if (typeof input === "number") {
+    input = input * 2;
+    //convert to String
+    input = input.toString();
+
+    return "😎" + input + "😎";
+  } else return "Primitive values only";
+}
+//myUserData(true);
+console.log(myUserData("Hello"));
 
 /******************************************************************************
 8.
