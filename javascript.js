@@ -228,3 +228,14 @@ Example2: (["Red", "Green", "Blue"], "Green")) --> ["Red", "Blue"]
 Example3: (["One", "Two", "Three"], "Four") --> ["One", "Two", "Three", "Four"]
 Example4: (["One", "Two", "Three"], "Two") --> ["One", "Three"]
 ******************************************************************************/
+function myParameters(arr, value) {
+  const index = arr.indexOf(value);
+  if (index === -1) {
+    arr.push(value);
+  } else {
+    arr.splice(index, 1);
+  }
+  return arr;
+}
+
+console.log(myParameters(["Red", "Yellow", "Green", "Blue"], "Yellow"));
