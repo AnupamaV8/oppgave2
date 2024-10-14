@@ -37,14 +37,11 @@ Example: "This is cool" should return "THIS IS COOL!"
 
 ******************************************************************************/
 
-function myWord(myString, extraStr) {
-  // let myString = "This is cool";
-  // const extraStr = "!";
-  console.log(myString.trim().toUpperCase() + extraStr);
-  return;
+function myWord(myString) {
+  return myString.toUpperCase() + "!";
 }
-//const myString = myWord;
-myWord("    This is cool     ", "!");
+
+console.log(myWord("This is cool"));
 /******************************************************************************
 3.
 
@@ -95,18 +92,20 @@ Example 1: ["Red", "Green", "Blue", "Yellow"] should return ["Green", "Blue"]
 Example 2: ["One", "Two", "Three", "Four", "Five", "Six"] should return
 ["Two", "Three", "Four", "Five"]
 *************************************************************************/
+function myHobbies(Array) {
+  return Array.slice(1, -1);
+}
 
-const myHobbies = new Array(
+const hobbies = [
   "Chess   ",
   "Yoga",
   "Hiking",
   "boardgames",
   "badminton",
-  "Watching tv"
-);
+  "Watching tv",
+];
+console.log(myHobbies(hobbies));
 
-console.log(myHobbies);
-console.log(myHobbies.slice(1, 5));
 /******************************************************************************
 
 
@@ -125,10 +124,14 @@ Example2: " It's hard to use methods " should return "It's hard to use methods"
 Example3: "   hard        " should return "fun"
 
 ******************************************************************************/
-const modifiedData = "  It's hard to use methods   ";
-//console.log(modifiedData.length);
-console.log(modifiedData.replace("hard", "fun"));
-console.log(modifiedData.trim());
+function modifyData(string) {
+  const trimedString = string.trim();
+  const modifiedString = trimedString.replace("hard", "fun");
+  return modifiedString;
+}
+
+console.log(modifyData("  It's hard to use methods   "));
+console.log(modifyData("  JavaScript is hard  "));
 /******************************************************************************
 6.
 
